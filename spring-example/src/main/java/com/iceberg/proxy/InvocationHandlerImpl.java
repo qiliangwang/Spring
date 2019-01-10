@@ -21,9 +21,8 @@ public class InvocationHandlerImpl implements InvocationHandler {
 	}
 
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		Object result = null;
 		System.out.println("使用jdk动态代理 开启事务");
-		result = method.invoke(target, args);
+        Object result = method.invoke(target, args);
 		System.out.println("使用jdk动态代理 提交事务");
 		return result;
 	}
